@@ -398,8 +398,7 @@ class ThemeDecoder {
   /// Decodes the given [value] to an [AnimationStyle].  Supported
   /// values are:
   /// * `noAnimation`
-  static AnimationStyle? decodeAnimationStyle(dynamic value,
-      {bool validate = true}) {
+  static AnimationStyle? decodeAnimationStyle(dynamic value, {bool validate = true}) {
     AnimationStyle? result;
 
     if (value is AnimationStyle) {
@@ -1421,8 +1420,7 @@ class ThemeDecoder {
   ///  * `centered`
   ///  * `linear`
   ///  * `spread`
-  static BottomNavigationBarLandscapeLayout?
-      decodeBottomNavigationBarLandscapeLayout(
+  static BottomNavigationBarLandscapeLayout? decodeBottomNavigationBarLandscapeLayout(
     dynamic value, {
     bool validate = true,
   }) {
@@ -1617,9 +1615,7 @@ class ThemeDecoder {
     if (value is BoxBorder) {
       result = value;
     } else if (value != null) {
-      if (value['color'] != null ||
-          value['style'] != null ||
-          value['width'] != null) {
+      if (value['color'] != null || value['style'] != null || value['width'] != null) {
         final side = decodeBorderSide(
           value,
           validate: false,
@@ -1690,10 +1686,8 @@ class ThemeDecoder {
         validate: validate,
       ));
       result = BoxConstraints(
-        maxHeight:
-            JsonClass.maybeParseDouble(value['maxHeight']) ?? double.infinity,
-        maxWidth:
-            JsonClass.maybeParseDouble(value['maxWidth']) ?? double.infinity,
+        maxHeight: JsonClass.maybeParseDouble(value['maxHeight']) ?? double.infinity,
+        maxWidth: JsonClass.maybeParseDouble(value['maxWidth']) ?? double.infinity,
         minHeight: JsonClass.maybeParseDouble(value['minHeight']) ?? 0.0,
         minWidth: JsonClass.maybeParseDouble(value['minWidth']) ?? 0.0,
       );
@@ -3639,8 +3633,7 @@ class ThemeDecoder {
           value['rangePickerBackgroundColor'],
           validate: false,
         ),
-        rangePickerElevation:
-            JsonClass.maybeParseDouble(value['rangePickerElevation']),
+        rangePickerElevation: JsonClass.maybeParseDouble(value['rangePickerElevation']),
         rangePickerHeaderBackgroundColor: decodeColor(
           value['rangePickerHeaderBackgroundColor'],
           validate: false,
@@ -5117,8 +5110,7 @@ class ThemeDecoder {
           value['backgroundColor'],
           validate: false,
         ),
-        disabledElevation:
-            JsonClass.maybeParseDouble(value['disabledElevation']),
+        disabledElevation: JsonClass.maybeParseDouble(value['disabledElevation']),
         enableFeedback: JsonClass.maybeParseBool(value['enableFeedback']),
         elevation: JsonClass.maybeParseDouble(value['elevation']),
         extendedIconLabelSpacing: JsonClass.maybeParseDouble(
@@ -5145,8 +5137,7 @@ class ThemeDecoder {
           value['foregroundColor'],
           validate: false,
         ),
-        highlightElevation:
-            JsonClass.maybeParseDouble(value['highlightElevation']),
+        highlightElevation: JsonClass.maybeParseDouble(value['highlightElevation']),
         hoverColor: decodeColor(
           value['hoverColor'],
           validate: false,
@@ -5619,8 +5610,7 @@ class ThemeDecoder {
                 value['focal'],
                 validate: false,
               ),
-              focalRadius:
-                  JsonClass.maybeParseDouble(value['focalRadius'], 0.0)!,
+              focalRadius: JsonClass.maybeParseDouble(value['focalRadius'], 0.0)!,
               radius: JsonClass.maybeParseDouble(value['radius'], 0.5)!,
               stops: _decodeDynamicList<double>(
                 value['stops'],
@@ -5801,35 +5791,35 @@ class ThemeDecoder {
         value: value,
         validate: validate,
       ));
-      result = Icon(
-        decodeIconData(value['icon'], validate: false)!,
-        applyTextScaling: JsonClass.maybeParseBool(value['applyTextScaling']),
-        blendMode: decodeBlendMode(
-          value['blendMode'],
-          validate: false,
-        ),
-        color: ThemeDecoder.decodeColor(
-          value['color'],
-          validate: false,
-        ),
-        fill: JsonClass.maybeParseDouble(value['fill']),
-        grade: JsonClass.maybeParseDouble(value['grade']),
-        opticalSize: JsonClass.maybeParseDouble(value['opticalSize']),
-        semanticLabel: value['semanticLabel'],
-        shadows: JsonClass.maybeFromDynamicList(
-          value['shadows'],
-          (map) => ThemeDecoder.decodeShadow(
-            map,
-            validate: false,
-          )!,
-        ),
-        size: JsonClass.maybeParseDouble(value['size']),
-        textDirection: ThemeDecoder.decodeTextDirection(
-          value['textDirection'],
-          validate: false,
-        ),
-        weight: JsonClass.maybeParseDouble(value['weight']),
-      );
+      // result = Icon(
+      //   decodeIconData(value['icon'], validate: false)!,
+      //   applyTextScaling: JsonClass.maybeParseBool(value['applyTextScaling']),
+      //   blendMode: decodeBlendMode(
+      //     value['blendMode'],
+      //     validate: false,
+      //   ),
+      //   color: ThemeDecoder.decodeColor(
+      //     value['color'],
+      //     validate: false,
+      //   ),
+      //   fill: JsonClass.maybeParseDouble(value['fill']),
+      //   grade: JsonClass.maybeParseDouble(value['grade']),
+      //   opticalSize: JsonClass.maybeParseDouble(value['opticalSize']),
+      //   semanticLabel: value['semanticLabel'],
+      //   shadows: JsonClass.maybeFromDynamicList(
+      //     value['shadows'],
+      //     (map) => ThemeDecoder.decodeShadow(
+      //       map,
+      //       validate: false,
+      //     )!,
+      //   ),
+      //   size: JsonClass.maybeParseDouble(value['size']),
+      //   textDirection: ThemeDecoder.decodeTextDirection(
+      //     value['textDirection'],
+      //     validate: false,
+      //   ),
+      //   weight: JsonClass.maybeParseDouble(value['weight']),
+      // );
     }
 
     return result;
@@ -6636,8 +6626,7 @@ class ThemeDecoder {
         ),
         dense: JsonClass.maybeParseBool(value['dense']),
         enableFeedback: JsonClass.maybeParseBool(value['enableFeedback']),
-        horizontalTitleGap:
-            JsonClass.maybeParseDouble(value['horizontalTitleGap']),
+        horizontalTitleGap: JsonClass.maybeParseDouble(value['horizontalTitleGap']),
         iconColor: decodeColor(
           value['iconColor'],
           validate: false,
@@ -7284,8 +7273,7 @@ class ThemeDecoder {
           value['elevation'],
           validate: false,
         ),
-        fixedSize:
-            decodeWidgetStatePropertySize(value['fixedSize'], validate: false),
+        fixedSize: decodeWidgetStatePropertySize(value['fixedSize'], validate: false),
         maximumSize: decodeWidgetStatePropertySize(
           value['maximumSize'],
           validate: false,
@@ -7751,8 +7739,7 @@ class ThemeDecoder {
   ///  * `alwaysHide`
   ///  * `alwaysShow`
   ///  * `onlyShowSelected`
-  static NavigationDestinationLabelBehavior?
-      decodeNavigationDestinationLabelBehavior(
+  static NavigationDestinationLabelBehavior? decodeNavigationDestinationLabelBehavior(
     dynamic value, {
     bool validate = true,
   }) {
@@ -8858,8 +8845,7 @@ class ThemeDecoder {
 
           switch (type) {
             case 'circular':
-              result =
-                  Radius.circular(JsonClass.maybeParseDouble(value['radius'])!);
+              result = Radius.circular(JsonClass.maybeParseDouble(value['radius'])!);
               break;
 
             case 'elliptical':
@@ -8986,8 +8972,7 @@ class ThemeDecoder {
         switch (type) {
           case 'round':
             result = RoundRangeSliderTickMarkShape(
-              tickMarkRadius:
-                  JsonClass.maybeParseDouble(value['tickMarkRadius']),
+              tickMarkRadius: JsonClass.maybeParseDouble(value['tickMarkRadius']),
             );
             break;
         }
@@ -9415,8 +9400,7 @@ class ThemeDecoder {
   /// values are:
   ///  * `manual`
   ///  * `onDrag`
-  static ScrollViewKeyboardDismissBehavior?
-      decodeScrollViewKeyboardDismissBehavior(
+  static ScrollViewKeyboardDismissBehavior? decodeScrollViewKeyboardDismissBehavior(
     dynamic value, {
     bool validate = true,
   }) {
@@ -10272,8 +10256,7 @@ class ThemeDecoder {
           value['inactiveTrackColor'],
           validate: false,
         ),
-        minThumbSeparation:
-            JsonClass.maybeParseDouble(value['minThumbSeparation']),
+        minThumbSeparation: JsonClass.maybeParseDouble(value['minThumbSeparation']),
         mouseCursor: decodeWidgetStatePropertyMouseCursor(
           value['mouseCursor'],
           validate: false,
@@ -11375,8 +11358,7 @@ class ThemeDecoder {
 
       switch (type) {
         case 'fixed':
-          result =
-              FixedColumnWidth(JsonClass.maybeParseDouble(value['value'])!);
+          result = FixedColumnWidth(JsonClass.maybeParseDouble(value['value'])!);
           break;
 
         case 'flex':
@@ -12468,8 +12450,7 @@ class ThemeDecoder {
           value['decorationStyle'],
           validate: false,
         ),
-        decorationThickness:
-            JsonClass.maybeParseDouble(value['decorationThickness']),
+        decorationThickness: JsonClass.maybeParseDouble(value['decorationThickness']),
         fontFamily: value['fontFamily'],
         fontFamilyFallback: value['fontFamilyFallback'] == null
             ? null
@@ -13630,8 +13611,7 @@ class ThemeDecoder {
           validate: false,
         ),
         verticalOffset: JsonClass.maybeParseDouble(value['verticalOffset']),
-        waitDuration:
-            JsonClass.maybeParseDurationFromMillis(value['waitDuration']),
+        waitDuration: JsonClass.maybeParseDurationFromMillis(value['waitDuration']),
       );
     }
 
@@ -14403,8 +14383,7 @@ class ThemeDecoder {
           );
         } else {
           assert(SchemaValidator.validate(
-            schemaId:
-                '$_baseSchemaUrl/widget_state_property_edge_insets_geometry',
+            schemaId: '$_baseSchemaUrl/widget_state_property_edge_insets_geometry',
             value: value,
             validate: validate,
           ));
@@ -14591,8 +14570,7 @@ class ThemeDecoder {
   ///
   /// See also:
   ///  * [decodeIconThemeData]
-  static WidgetStateProperty<IconThemeData?>?
-      decodeWidgetStatePropertyIconThemeData(
+  static WidgetStateProperty<IconThemeData?>? decodeWidgetStatePropertyIconThemeData(
     dynamic value, {
     bool validate = true,
   }) {
@@ -14727,8 +14705,7 @@ class ThemeDecoder {
   ///
   /// See also:
   ///  * [decodeMouseCursor]
-  static WidgetStateProperty<MouseCursor?>?
-      decodeWidgetStatePropertyMouseCursor(
+  static WidgetStateProperty<MouseCursor?>? decodeWidgetStatePropertyMouseCursor(
     dynamic value, {
     bool validate = true,
   }) {
@@ -14861,8 +14838,7 @@ class ThemeDecoder {
   ///
   /// See also:
   ///  * [decodeOutlinedBorder]
-  static WidgetStateProperty<OutlinedBorder?>?
-      decodeWidgetStatePropertyOutlinedBorder(
+  static WidgetStateProperty<OutlinedBorder?>? decodeWidgetStatePropertyOutlinedBorder(
     dynamic value, {
     bool validate = true,
   }) {
