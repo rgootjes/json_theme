@@ -5887,13 +5887,13 @@ class ThemeDecoder {
         value: value,
         validate: validate,
       ));
-      result = IconData(
-        JsonClass.maybeParseInt(value['codePoint'])!,
-        fontFamily: value['fontFamily'],
-        fontFamilyFallback: value['fontFamilyFallback'],
-        fontPackage: value['fontPackage'],
-        matchTextDirection: JsonClass.parseBool(value['matchTextDirection']),
-      );
+      // result = IconData(
+      //   JsonClass.maybeParseInt(value['codePoint'])!,
+      //   fontFamily: value['fontFamily'],
+      //   fontFamilyFallback: value['fontFamilyFallback'],
+      //   fontPackage: value['fontPackage'],
+      //   matchTextDirection: JsonClass.parseBool(value['matchTextDirection']),
+      // );
     }
 
     return result;
